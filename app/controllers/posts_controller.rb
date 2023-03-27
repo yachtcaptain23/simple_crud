@@ -1,20 +1,14 @@
-class PostsController < ApplicationController
-  skip_forgery_protection
+class PostsController < BaseController
+#  skip_forgery_protection
   def create
-    respond_to do |format|
-      format.json { render json: Post.create(title: params[:title], description: params[:description]).to_json }
-    end
+    render(json: Post.create(title: params[:title], description: params[:description]).to_json, status: 200)
   end
 
   def index
-    respond_to do |format|
-      format.json { render json: Post.all.to_json }
-    end
+    render(json: Post.all.to_json, status: 200)
   end
 
   def show
-    respond_to do |format|
-      format.json { render json: Post.find(params[:id]).to_json }
-    end
+    render(json: Post.find(params[:id].to_json), status: 200)
   end
 end
