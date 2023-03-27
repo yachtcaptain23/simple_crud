@@ -1,4 +1,4 @@
-entrypoint: bundle exec rails server Puma --port $PORT
+entrypoint: "rm -rf tmp/pids/server.pid && bundle exec rails s --port $PORT -b '0.0.0.0'"
 env: standard
 runtime: ruby32
 
