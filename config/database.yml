@@ -23,7 +23,8 @@ test:
 
 production:
   <<: *default
+  database: "postgres"
+  host: "/cloudsql/albertmw-pg-cloud"
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  database: "postgres"
-  INSTANCE_UNIX_SOCKET: "/cloudsql/synthetic-time-381818:us-central1:albertmw-pg-cloud"
+#  INSTANCE_UNIX_SOCKET: "/cloudsql/synthetic-time-381818:us-central1:albertmw-pg-cloud"
