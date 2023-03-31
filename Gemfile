@@ -24,6 +24,7 @@ gem "jbuilder"
 gem 'pg', '~> 1.4', '>= 1.4.6'
 # gem "redis", "~> 4.0"
 gem "slim", "~> 5.1.0"
+gem 'webrick', '~> 1.3', '>= 1.3.1'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
