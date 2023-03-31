@@ -7,6 +7,7 @@
 default: &default
   adapter: 'postgresql'
   encoding: unicode
+  timeout: 5000
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
@@ -22,4 +23,7 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  database: "postgres"
+  INSTANCE_UNIX_SOCKET: "/cloudsql/synthetic-time-381818:us-central1:albertmw-pg-cloud"
